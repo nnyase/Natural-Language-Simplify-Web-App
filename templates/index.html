@@ -1,0 +1,95 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+<!doctype html>
+<head>
+    <!-- <title>SpaCify</title> -->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/custom.css')}}">
+</head>
+
+<body>
+
+    {%if name %}
+    <span class="message">Hello there, {{ name }}!</span> It's {{ date.strftime("%A, %d %B, %Y at %X") }}.
+{% else %}
+    <span class="message">What's your name? Provide it after /hello/ in the URL.</span>
+{% endif %}
+{% block navbar %}
+    <!-- Start Nav Bar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">NLPiffy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('basic_api')}}">Api</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('imagescloud')}}">ImageCloud</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('about')}}">About</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    <!-- End Nav Bar -->
+    {% endblock %}
+
+    <br />
+    <br />
+
+    <div class="jumbotron text-center">
+        <div class="container">
+            <h2>NLPiffy</h2>
+            <p> Natural Language Processing Simplified.</p>
+        </div>
+    </div>
+    <div class ="container">
+        <form method = "POST" action="/analyze" class="form-group">
+            <textarea name="rawtext" cols="3" rows="3" class="form-control"></textarea>
+            <button type ="submit" class ="btn btn-ouline-primary"> NLPiffy</button>
+            <button type = "reset" class = "btn btn-ouline-success"> Clear </button>
+            
+
+        </form>
+
+
+
+    </div class ="container">
+    {% for i in custom_tokens %}
+    <li>{{i}}</li>
+    {% endfor %}
+
+
+</body>
+
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+</script>
+
+{% endblock %}
