@@ -42,3 +42,4 @@ wasabi==0.9.1
 Werkzeug==2.2.0
 zipp==3.8.1
 wordcloud
+textblob.download_corpora

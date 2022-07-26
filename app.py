@@ -6,6 +6,8 @@ from xml.dom.minidom import Entity
 from flask import Flask, url_for, request,render_template,jsonify, send_file
 from flask_bootstrap import Bootstrap
 
+
+
 import spacy
 from spacy.lang.en.examples import sentences
 import wordcloud 
@@ -17,6 +19,10 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import time
 from io import BytesIO
+
+import nltk
+nltk.download('punkt')
+nltk.download()
 # Initialize App
 app = Flask(__name__)
 Bootstrap(app)
