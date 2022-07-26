@@ -11,6 +11,48 @@
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/custom.css')}}">
 </head>
 <body>
+
+{% block navbar %}
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="#">NLPiffy</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('api')}}">Api</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="{{url_for('imagescloud')}}">ImageCloud</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('about')}}">About</a>
+      </li>
+    </ul>
+    
+  </div>
+</nav>
+
+<div class="jumbotron">
+    <div class="container">
+    <h3>NLPiffy</h3>
+    <p class="lead">Natural Language Processing simplified...</p>
+
+    <a class="btn btn-lg btn-primary" href="{{url_for('index')}}" role="button">Refresh</a>
+  </div>
+</div>
+
+<div class = "alert alert-info">
+    <p>localhost/5000/api/tokens/{your text}</p>
+    <p>localhost/5000/api/lemma/{your text}</p>
+    p>localhost/5000/api/wordinfo/{your text}</p>
+</div>
+
+{% endblock %}
 </body>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
