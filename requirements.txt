@@ -1,4 +1,7 @@
-flask
-flask_bootstrap
-spacy
-TextBlob
+Flask==1.1.2
+Flask_Bootstrap==3.3.7.1
+matplotlib==3.3.4
+spacy==3.4.0
+textblob==0.17.1
+wordcloud==1.8.2.2
+gunicorn
