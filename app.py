@@ -22,7 +22,6 @@ from io import BytesIO
 
 import nltk
 nltk.download('punkt')
-nltk.download()
 # Initialize App
 app = Flask(__name__)
 Bootstrap(app)
