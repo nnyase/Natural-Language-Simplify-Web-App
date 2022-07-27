@@ -4,4 +4,4 @@ consitituent parts such as parts of speech, lemma, sentiment and so on. The web 
 
 - 🎯 Web app website: [NLPiffy](https://natural-lang-simple.herokuapp.com/)
 
-<img scr = "https://raw.githubusercontent.com/nnyase/Natural-Language-Simplify-Web-App/main/screenshotofapp.png?token=GHSAT0AAAAAABWYYY4Y62HMUZWBVHTPWRTKYXBLDXA">
+<img scr = "https://raw.githubusercontent.com/nnyase/Natural-Language-Simplify-Web-App/main/screenshotofapp.png?token=GHSAT0AAAAAABWYYY4Z6K3D3NLQREV6KQA6YXBLEIQ">
